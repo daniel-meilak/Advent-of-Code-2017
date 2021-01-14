@@ -26,7 +26,7 @@ int main(){
     return 0;
 }" >> day_${1}/day_${1}.cpp
 
-mkdir test
+mkdir day_${1}/test
 
 echo "#include<iostream>
 #include<vector>
