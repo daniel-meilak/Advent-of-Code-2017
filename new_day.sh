@@ -33,7 +33,7 @@ echo "#include<iostream>
 #include<string>
 #include<algorithm>
 #include<cstdlib>
-#include\"../../Utils/utils.h\"
+#include\"../../../Utils/utils.h\"
 
 int main(){
 
