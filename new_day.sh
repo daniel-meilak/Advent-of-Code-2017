@@ -26,6 +26,8 @@ int main(){
     return 0;
 }" >> day_${1}/day_${1}.cpp
 
+mkdir test
+
 echo "#include<iostream>
 #include<vector>
 #include<string>
@@ -36,7 +38,7 @@ echo "#include<iostream>
 int main(){
 
     return 0;
-}" >> day_${1}/test.cpp
+}" >> day_${1}/test/test.cpp
 
 echo "## Day ${1}" >> day_${1}/README.md
 
