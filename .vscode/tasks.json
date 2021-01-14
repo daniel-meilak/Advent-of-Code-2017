@@ -9,7 +9,7 @@
 				"-g",
 				"-Wall",
 				"-std=c++17",
-				"${file}",
+				"${fileDirname}/*.cpp",
 				"${workspaceFolder}/Utils/utils.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
@@ -35,7 +35,7 @@
 				"-O3",
 				"-Wall",
 				"-std=c++17",
-				"${file}",
+				"${fileDirname}/*.cpp",
 				"${workspaceFolder}/Utils/utils.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
