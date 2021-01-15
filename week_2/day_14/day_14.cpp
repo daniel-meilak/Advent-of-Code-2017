@@ -1,14 +1,19 @@
 #include<iostream>
 #include<vector>
+#include<list>
 #include<string>
 #include<algorithm>
 #include<cstdlib>
 #include<iomanip>
+#include<unordered_map>
+#include<bitset>
 #include<numeric>
 #include"../../Utils/utils.h"
 
 // forward function declaration
 std::string knot_hash(std::string input);
+std::string hash_to_binary(const std::string &hash);
+void group_fill(const int &i, const int &j, std::vector<std::string> &grid, std::vector<std::vector<bool>> &seen);
 
 int main(){
 
@@ -18,22 +23,118 @@ int main(){
     // grid 
     std::vector<std::string> grid;
 
+    // pad top of grid
+    grid.push_back(std::string(130,0));
+
+    // fill grid
     for (int i=0; i<128; i++){
 
-        grid.push_back("");
+        // hash input
+        std::string value = input + "-" + std::to_string(i);
 
         // generate hash;
-        std::string hash = knot_hash(input + "-" + std::to_string(i));
+        std::string hash = knot_hash(value);
 
         // convert hash to bits
+        grid.push_back("0"+hash_to_binary(hash)+"0");
     }
 
-    std::cout << "Answer (part 1): " << std::endl;
-    std::cout << "Answer (part 2): " << std::endl;
+    // pad end of grid
+    grid.push_back(std::string(130,0));
+
+    // count number of used squares (1)
+    int count = 0;
+    for (unsigned int i=0; i<grid.size(); i++){
+        for (const char &c : grid[i]){
+            if (c == '1'){ count++; }
+        }
+    }
+
+    // count groups
+    int groups = 0;
+    
+    // map of squares already in a group
+    std::vector<std::vector<bool>> seen(130, std::vector<bool>(130,false));
+
+    // check all squares
+    for (unsigned int i=1; i<grid.size()-1; i++){
+        for (unsigned int j=1; j<grid[0].size()-1; j++){
+
+            // if used (1) and not already in seen group
+            if (grid[i][j]=='1' && !seen[i][j]){
+
+                // find all parts of group
+                group_fill(i,j,grid,seen);
+
+                // increment group count
+                groups++;
+            }
+        }
+    }
+
+    std::cout << "Answer (part 1): " << count  << std::endl;
+    std::cout << "Answer (part 2): " << groups << std::endl;
 
     return 0;
 }
 
+// from a starting position in a group, finds all other
+// squares in the group (BFS)
+void group_fill(const int &i, const int &j, std::vector<std::string> &grid, std::vector<std::vector<bool>> &seen){
+
+    seen[i][j] = true;
+
+    std::list<std::vector<int>> stack = {{i,j}};
+
+    while (stack.size()){
+
+        // move to next member of stack
+        std::vector<int> c = stack.front();
+        stack.pop_front();
+
+        // check neighbours 
+        std::vector<int> a = {1,-1, 0, 0};
+        std::vector<int> b = {0, 0, 1,-1};
+
+        // 4 possible directions
+        for (int i=0; i<4; i++){
+            int x = c[0]+a[i];
+            int y = c[1]+b[i];
+            
+            // check if group (1) and not seen already
+            if (grid[x][y] == '1' && !seen[x][y]){
+                stack.push_back({x,y});
+                seen[x][y] = true;
+            }
+        }
+    }
+}
+
+// converts hash to binary representation (string)
+std::string hash_to_binary(const std::string &hash){
+
+    std::string binary;
+
+    for (const char &c : hash){
+
+        // use string stream to handle hash
+        // conversion to int
+        std::stringstream ss;
+        ss << std::hex << c;
+
+        // convert to int
+        unsigned n;
+        ss >> n;
+
+        // convert int to binary
+        std::bitset<4> b(n);
+        binary += b.to_string();
+    }
+
+    return binary;
+}
+
+// returns knot hash using input
 std::string knot_hash(std::string input){
 
     // process input into ASCII codes
@@ -43,6 +144,13 @@ std::string knot_hash(std::string input){
     for (char c : input){
         cycle.push_back(c);
     }
+
+    // add extra values at end
+    cycle.push_back(17);
+    cycle.push_back(31);
+    cycle.push_back(73);
+    cycle.push_back(47);
+    cycle.push_back(23);
 
     // create vector 0-255
     std::vector<int> hash(256);
@@ -106,7 +214,7 @@ std::string knot_hash(std::string input){
     // use stringstream to create hexadecimal hash
     std::stringstream ss;
     for (unsigned int i=0; i<dense_hash.size(); i++){
-        ss << std::hex << dense_hash[i];
+        ss << std::setfill ('0') << std::setw(2) << std::hex << dense_hash[i];
     }
 
     return ss.str();
