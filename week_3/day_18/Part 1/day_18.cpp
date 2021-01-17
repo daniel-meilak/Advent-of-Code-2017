@@ -39,8 +39,6 @@ int main(){
         else if (line[0]=="mod"){ mod(line[1], line[2], reg);    }
         else if (line[0]=="rcv"){ rcv(line[1], freq, recv, reg); }
         else if (line[0]=="jgz"){ jgz(line[1], line[2], i, reg); }
-
-        if (recv.size() == 1){ break; }
     }
 
     std::cout << "Answer (part 1): " << recv.front() << std::endl;
