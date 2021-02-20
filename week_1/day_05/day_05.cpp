@@ -35,15 +35,12 @@ int jump(std::vector<int> input, const bool part2){
         // jump 
         i += input[i];
 
-        // part 1 or part 2
-        if (!part2){
-            // increment last jump
-            input[j]++;
-        }
-        else {
-            // increment or decriment depending on value
-            if (input[j] > 2){input[j]--;}
-            else {input[j]++;}
+        // increment last jump
+        if (!part2){ input[j]++; }
+        // increment or decriment depending on value
+        else {            
+            if (input[j] > 2){ input[j]--; }
+            else { input[j]++; }
         }
 
         steps++;

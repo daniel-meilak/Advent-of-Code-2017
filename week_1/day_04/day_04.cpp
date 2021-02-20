@@ -26,9 +26,9 @@ int main(){
         bool valid2 = true;
 
         // check each password
-        int size = line.size();
-        for (int i=0; i<size; i++){
-            for (int j=i+1; j<size; j++){
+        size_t size = line.size();
+        for (size_t i=0; i<size; i++){
+            for (size_t j=i+1; j<size; j++){
 
                 std::string pass1 = line[i];
                 std::string pass2 = line[j];
@@ -78,13 +78,13 @@ bool compare_letters(std::string word1, std::string word2){
 
         // fill freq1 using word1
         for (const char & letter : word1){
-            if (letter == '-'){continue;}
+            if (letter == '-'){ continue; }
             freq1[letter-97].second++;
         }
 
         // fill freq2 using word2
         for (const char & letter : word2){
-            if (letter == '-'){continue;}
+            if (letter == '-'){ continue; }
             freq2[letter-97].second++;
         }
 

@@ -83,9 +83,7 @@ int tot_weight(std::map<std::string, node> &towers, const std::string &start){
     node &current = towers[start];
 
     // end condition, hitting end of branch
-    if (current.holding.size() == 0){
-        current.total_weight = current.weight;
-    }
+    if (current.holding.size() == 0){ current.total_weight = current.weight; }
     // when above end, sum weights of branches
     else {
         int sum = 0;
@@ -121,7 +119,6 @@ int part2(std::map<std::string, node> &towers, std::string start){
         if (branch[0] == branch[1]){
             answer = branch.back().weight - (branch.back().total_weight - branch.front().total_weight);
             branch  = {branch.back()};
-
         }
         else {
             answer = branch.front().weight - (branch.front().total_weight - branch.back().total_weight);
@@ -145,9 +142,7 @@ bool balanced(const std::vector<node> &branch){
 
     auto it1 = branch.begin();
     for (auto it2=++branch.begin(); it2!=branch.end(); it2++){
-        if (*it2 != *it1){
-            return false;
-        }
+        if (*it2 != *it1){ return false; }
     }
 
     return true;
