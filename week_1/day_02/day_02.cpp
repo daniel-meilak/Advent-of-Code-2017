@@ -28,9 +28,7 @@ int main(){
                 if (x == y){ continue; }
 
                 // look for numbers that divide exactly
-                if (x % y == 0){
-                    count2 += x/y;
-                }
+                if (x % y == 0){ count2 += x/y; }
             }
         }
         
