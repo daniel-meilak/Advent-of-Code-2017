@@ -20,10 +20,10 @@ int main(){
 
     // fill middle of large grid with input (not exactly in middle)
     const int start = grid_size/2;
-    const int y_max = input.size();
-    const int x_max = input[0].size();
-    for (int y=0; y<y_max; y++){
-        for (int x=0; x<x_max; x++){
+    size_t y_max = input.size();
+    size_t x_max = input[0].size();
+    for (size_t y=0; y<y_max; y++){
+        for (size_t x=0; x<x_max; x++){
             grid[y+start][x+start] = input[y][x];
         }
     }
