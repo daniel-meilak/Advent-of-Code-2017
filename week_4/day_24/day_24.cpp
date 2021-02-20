@@ -63,12 +63,8 @@ void daisychain(int start, int length, int strength, std::vector<port> &ports){
 
             p.used = true;
             // link next port
-            if (p.a == start){
-                daisychain(p.b, length+1, strength+p.a+p.b, ports);
-            }
-            else {
-                daisychain(p.a, length+1, strength+p.a+p.b, ports);
-            }
+            if (p.a == start){ daisychain(p.b, length+1, strength+p.a+p.b, ports); }
+            else             { daisychain(p.a, length+1, strength+p.a+p.b, ports); }
             p.used = false;
         }
     }
