@@ -44,7 +44,7 @@ int main(){
 
     // count number of used squares (1)
     int count = 0;
-    for (unsigned int i=0; i<grid.size(); i++){
+    for (size_t i=0; i<grid.size(); i++){
         for (const char &c : grid[i]){
             if (c == '1'){ count++; }
         }
@@ -57,8 +57,8 @@ int main(){
     std::vector<std::vector<bool>> seen(130, std::vector<bool>(130,false));
 
     // check all squares
-    for (unsigned int i=1; i<grid.size()-1; i++){
-        for (unsigned int j=1; j<grid[0].size()-1; j++){
+    for (size_t i=1; i<grid.size()-1; i++){
+        for (size_t j=1; j<grid[0].size()-1; j++){
 
             // if used (1) and not already in seen group
             if (grid[i][j]=='1' && !seen[i][j]){
@@ -213,7 +213,7 @@ std::string knot_hash(std::string input){
 
     // use stringstream to create hexadecimal hash
     std::stringstream ss;
-    for (unsigned int i=0; i<dense_hash.size(); i++){
+    for (size_t i=0; i<dense_hash.size(); i++){
         ss << std::setfill ('0') << std::setw(2) << std::hex << dense_hash[i];
     }
 

@@ -26,30 +26,20 @@ int main(){
     for (int i=0; i<size; i++){
 
         // start of garbage section
-        if ( (input[i]=='<') && (!in_garbage) ){
-            in_garbage = true;
-        }
+        if (input[i]=='<' && !in_garbage){ in_garbage = true; }
         // end of garbage section
-        else if ( (input[i]=='>') && (in_garbage) ){
-            in_garbage = false;
-        }
+        else if (input[i]=='>' && in_garbage){ in_garbage = false; }
         // skip next character
-        else if ( input[i]=='!'){
-            i++;
-        }
+        else if (input[i]=='!'){ i++; }
         //beginning of group
-        else if ( (input[i]=='{') && (!in_garbage) ){
-            points++;
-        }
+        else if (input[i]=='{' && !in_garbage){ points++; }
         // end of group
-        else if ( (input[i]=='}') && (!in_garbage) ){
+        else if (input[i]=='}' && !in_garbage){
             score += points;
             points--;
         }
         // count all garbage (not '<' or '>' or '!' and following character)
-        else if (in_garbage){
-            garbage++;
-        }
+        else if (in_garbage){ garbage++; }
     }
 
 

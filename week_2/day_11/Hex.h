@@ -17,7 +17,7 @@ struct Hex{
 // Arithmetic
 //===================================================================
 
-bool operator== (const Hex &a, const Hex &b);
+bool operator==(const Hex &a, const Hex &b);
 
 Hex operator+ (const Hex &lhs, const Hex &rhs);
 
