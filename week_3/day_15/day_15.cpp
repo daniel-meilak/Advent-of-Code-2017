@@ -44,9 +44,7 @@ int judge(unsigned int a, unsigned int b, const bool part2){
         }
 
         // check if lower 16 bits are the same
-        if ( (a << 16) == (b << 16) ){
-            pairs++;
-        }
+        if ( (a << 16) == (b << 16) ){ pairs++; }
     }
 
     return pairs;
