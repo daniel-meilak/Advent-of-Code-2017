@@ -29,11 +29,7 @@ int main(){
         prog2 = dance(prog2,input);
 
         // check if unique
-        if (uniques.count(prog2)){
-            if ((iter-i) % (i-uniques[prog2]) == 0){
-                break;
-            }
-        }
+        if (uniques.count(prog2) && (iter-i)%(i-uniques[prog2]) == 0){ break; }
         uniques[prog2] = i;
     }
     

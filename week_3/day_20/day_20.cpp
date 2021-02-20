@@ -3,6 +3,7 @@
 #include<string>
 #include<algorithm>
 #include<cstdlib>
+#include<ranges> // C++20
 #include"../../Utils/utils.h"
 
 int main(){
@@ -15,7 +16,7 @@ int main(){
     const int particles = input.size();
     
     // manhattan distance of each particle
-    std::vector<long long> manhattan(particles);
+    std::vector<long long> manhattan_vec(particles);
 
     // num of ticks
     const int ticks = 10000;
@@ -40,7 +41,7 @@ int main(){
             input[j][2] += input[j][5];
 
             // calculate manhattan distances
-            manhattan[j] = manhattan_3D(input[j][0], input[j][1], input[j][2]);
+            manhattan_vec[j] = manhattan(input[j]);
         }
 
         // check for collisions
@@ -55,7 +56,7 @@ int main(){
     }
 
     // find particle closest to origin after simulation
-    int closest = std::distance(manhattan.begin(), std::min_element(manhattan.begin(), manhattan.end()));
+    int closest = std::distance(manhattan_vec.begin(), std::ranges::min_element(manhattan_vec));
 
     // check how many particles did not collide
     int count = 0;

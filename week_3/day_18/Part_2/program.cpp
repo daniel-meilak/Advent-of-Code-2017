@@ -31,12 +31,8 @@ void program::run(program &prog){
 
 void program::snd(const std::string &a, program &prog){
 
-    if (a[0]>='a' && a[0]<='z'){
-        prog.recv.push_back(reg[a]);
-    }
-    else {
-        prog.recv.push_back(std::stoi(a));
-    }
+    if (a[0]>='a' && a[0]<='z'){ prog.recv.push_back(reg[a]); }
+    else { prog.recv.push_back(std::stoi(a)); }
 
     pos++;
 
@@ -47,48 +43,32 @@ void program::snd(const std::string &a, program &prog){
 void program::set(const std::string &a, const std::string &b){
 
     // check if b is a register or value
-    if (b[0]>='a' && b[0]<='z'){
-        reg[a] = reg[b];
-    }
-    else {
-        reg[a] = std::stoi(b);
-    }
+    if (b[0]>='a' && b[0]<='z'){ reg[a] = reg[b];}
+    else { reg[a] = std::stoi(b); }
     pos++;
 }
 
 void program::add(const std::string &a, const std::string &b){
 
     // check if b is a register or value
-    if (b[0]>='a' && b[0]<='z'){
-        reg[a] += reg[b];
-    }
-    else {
-        reg[a] += std::stoi(b);
-    }
+    if (b[0]>='a' && b[0]<='z'){ reg[a] += reg[b]; }
+    else { reg[a] += std::stoi(b); }
     pos++;
 }
 
 void program::mul(const std::string &a, const std::string &b){
 
     // check if b is a register or value
-    if (b[0]>='a' && b[0]<='z'){
-        reg[a] *= reg[b];
-    }
-    else {
-        reg[a] *= std::stoi(b);
-    }
+    if (b[0]>='a' && b[0]<='z'){ reg[a] *= reg[b]; }
+    else { reg[a] *= std::stoi(b); }
     pos++;
 }
 
 void program::modu(const std::string &a, const std::string &b){
 
     // check if b is a register or value
-    if (b[0]>='a' && b[0]<='z'){
-        reg[a] = mod(reg[a],reg[b]);
-    }
-    else {
-        reg[a] = mod(reg[a],std::stol(b));
-    }
+    if (b[0]>='a' && b[0]<='z'){ reg[a] = mod(reg[a],reg[b]); }
+    else { reg[a] = mod(reg[a],std::stol(b)); }
     pos++;
 }
 
@@ -126,10 +106,6 @@ void program::jgz(const std::string &a, const std::string &b){
     }
 
     // check if b is a register or value
-    if (b[0]>='a' && b[0]<='z'){
-        pos += reg[b];
-    }
-    else {
-        pos += std::stoi(b);
-    }
+    if (b[0]>='a' && b[0]<='z'){ pos += reg[b]; }
+    else { pos += std::stoi(b); }
 }

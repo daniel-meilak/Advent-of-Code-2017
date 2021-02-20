@@ -52,9 +52,7 @@ int main(){
         char square = input[y][x];
 
         // found parth marker
-        if (square>='A' && square <='Z'){
-            path.push_back(square);
-        }
+        if (square>='A' && square <='Z'){ path.push_back(square); }
         // change direction
         else if (square=='+'){
             // if moving up/down, move left/right
