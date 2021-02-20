@@ -39,7 +39,6 @@ int main(){
         int &current = line[0];
 
         if (groups[current] != 1){
-
             count++;
             groups.merge(find_group_map(pipes,current));
         } 
@@ -70,7 +69,7 @@ std::unordered_map<int,int> find_group_map(std::unordered_map<int, std::vector<i
 
             // add connections from current to con
             std::vector<int> &next = pipes[current];
-            for (unsigned int i=0; i<next.size(); i++){
+            for (size_t i=0; i<next.size(); i++){
                 con.push_back(next[i]);
             }
         }

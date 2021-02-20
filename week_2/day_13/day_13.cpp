@@ -35,9 +35,7 @@ void move_scanners(std::vector<std::vector<int>> &input){
     for (auto &line : input){
 
         // check if direction needs to be reversed
-        if ( (line[2]==0 && line[3]==-1) || (line[2]+1==line[1] && line[3]==1) ){
-            line[3] *= -1;
-        }
+        if ((line[2]==0 && line[3]==-1) || (line[2]+1==line[1] && line[3]==1)){ line[3] *= -1; }
 
         // move scanner
         line[2] += line[3]; 
@@ -74,9 +72,7 @@ int part1(std::vector<std::vector<int>> input){
         }
 
         // if scanner at our pos is at the top
-        if (line[2] == 0){
-            severity += line[0]*line[1];
-        }
+        if (line[2] == 0){ severity += line[0]*line[1]; }
 
         // move forward and move gates
         pos++;
@@ -93,7 +89,6 @@ int part2(std::vector<std::vector<int>> &input){
     int delay = 0;
 
     while ( part1(input) != 0 || input.front()[2] == 0 ){
-
         // increase delay
         delay++;
 

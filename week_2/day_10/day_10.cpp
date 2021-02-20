@@ -153,7 +153,7 @@ std::string part2(){
 
     // use stringstream to create hexadecimal hash
     std::stringstream ss;
-    for (unsigned int i=0; i<dense_hash.size(); i++){
+    for (size_t i=0; i<dense_hash.size(); i++){
         ss << std::setfill ('0') << std::setw(2) << std::hex << dense_hash[i];
     }
 
