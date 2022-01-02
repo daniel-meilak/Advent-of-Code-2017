@@ -15,7 +15,7 @@ int main(){
 
     // read input into vector of vector of strings.
     std::vector<std::string> delimiters = {" ", ":"};
-    std::vector<std::vector<int>> input = input_to_int_2D(read_input_2D("input", delimiters));
+    std::vector<std::vector<int>> input = input_to_int_2D(read_input_2D("input_13", delimiters));
 
     // add scanner starting position and current direction (+1/-1) to each gate
     for (auto &line : input){

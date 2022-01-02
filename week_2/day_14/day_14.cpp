@@ -18,7 +18,7 @@ void group_fill(const int &i, const int &j, std::vector<std::string> &grid, std:
 int main(){
 
     // read input into strings.
-    std::string input = "jxqlasbh";
+    std::string input = read_line("input_14");
 
     // grid 
     std::vector<std::string> grid;

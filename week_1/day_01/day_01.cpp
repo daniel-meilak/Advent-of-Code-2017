@@ -11,7 +11,7 @@ int part(const std::string &input, const bool part2);
 int main(){
 
     // read input into vector of strings.
-    std::string input = read_line("input", {});
+    std::string input = read_line("input_01", {});
 
     std::cout << "Answer (part 1): " << part(input,false) << std::endl;
     std::cout << "Answer (part 2): " << part(input,true)  << std::endl;

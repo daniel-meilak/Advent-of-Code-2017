@@ -12,8 +12,12 @@ int judge(unsigned int a, unsigned int b, const bool part2);
 
 int main(){
 
-    unsigned int start_a = 618;
-    unsigned int start_b = 814;
+    // read input
+    std::vector<std::string> delimiters = {"Generator", " ", "starts with", "A", "B"};
+    std::vector<std::vector<uint>> input = input_to_int_2D<uint>(read_input_2D("input_15",delimiters));
+
+    unsigned int start_a = input[0][0];
+    unsigned int start_b = input[1][0];
 
     std::cout << "Answer (part 1): " << judge(start_a,start_b,false) << std::endl;
     std::cout << "Answer (part 2): " << judge(start_a,start_b,true) << std::endl;

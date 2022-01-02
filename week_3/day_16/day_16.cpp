@@ -12,7 +12,7 @@ std::string dance(std::string prog, const std::vector<std::string> &input);
 int main(){
 
     // read input into vector of strings.
-    std::vector<std::string> input = read_input("input", ",");
+    std::vector<std::string> input = read_input("input_16", ",");
 
     // program names
     std::string prog1 = "abcdefghijklmnop";

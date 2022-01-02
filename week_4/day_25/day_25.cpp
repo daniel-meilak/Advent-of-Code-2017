@@ -7,8 +7,11 @@
 
 int main(){
 
+    // read input
+    std::vector<std::vector<std::string>> input = read_input_2D("input_25",{" "});
+
     // total number of steps
-    const int steps = 12629077;
+    const int steps = std::stoi(input[1][5]);
 
     // tape initialised to 0
     std::vector<int> tape(100000,0);

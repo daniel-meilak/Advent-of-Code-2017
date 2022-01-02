@@ -11,7 +11,7 @@ std::vector<int> debugger(std::vector<int> input);
 int main(){
 
     // read input into vector of strings.
-    std::vector<int> input = input_to_int(read_input("input", "\t"));
+    std::vector<int> input = input_to_int(read_input("input_06", "\t"));
 
     std::vector<int> answers = debugger(input);
 

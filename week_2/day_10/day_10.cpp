@@ -23,7 +23,7 @@ int main(){
 int part1(){
 
     // read input into vector of strings.
-    std::vector<int> input = input_to_int(read_input("input", ","));
+    std::vector<int> input = input_to_int(read_input("input_10", ","));
 
     // create vector 0-255
     std::vector<int> hash(256);
@@ -75,7 +75,7 @@ int part1(){
 std::string part2(){
 
     // read input into string.
-    std::string input = read_line("input", {});
+    std::string input = read_line("input_10", {});
 
     // process input into ASCII codes
     std::vector<int> cycle;

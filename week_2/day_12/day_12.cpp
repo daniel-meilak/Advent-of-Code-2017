@@ -14,7 +14,7 @@ int main(){
 
     // read input into vector of vector of strings.
     std::vector<std::string> delimiters = {" ", "<->"};
-    std::vector<std::vector<int>> input = input_to_int_2D(read_input_2D("input", delimiters));
+    std::vector<std::vector<int>> input = input_to_int_2D(read_input_2D("input_12", delimiters));
 
     // map of connections
     std::unordered_map<int, std::vector<int>> pipes;

@@ -12,7 +12,7 @@ int part2(const int &step);
 int main(){
 
     // step
-    const int step = 370;
+    const int step = std::stoi(read_line("input_17"));
 
     std::cout << "Answer (part 1): " << part1(step) << std::endl;
     std::cout << "Answer (part 2): " << part2(step) << std::endl;

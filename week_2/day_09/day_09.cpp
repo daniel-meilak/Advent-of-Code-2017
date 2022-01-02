@@ -8,7 +8,7 @@
 int main(){
 
     // read input into vector of strings.
-    std::string input = read_line("input", {});
+    std::string input = read_line("input_09", {});
 
     // flag for garbage region
     bool in_garbage = false;

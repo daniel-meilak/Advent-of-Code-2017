@@ -7,7 +7,7 @@
 
 int main(){
 
-    int input = 325489;
+    int input = std::stoi(read_line("input_03"));
 
     int x, y, num = 1;
 
