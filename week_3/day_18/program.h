@@ -1,9 +1,53 @@
+#pragma once
+
 #include<vector>
 #include<string>
+#include<list>
+#include<unordered_map>
 #include"program.h"
-#include"../../../Utils/utils.h"
+#include"../../Utils/utils.h"
 
-program::program(std::vector<std::vector<std::string>> instr, int p){
+struct program{
+
+    // instructions
+    std::vector<std::vector<std::string>> instr;
+
+    // position in instructions
+    int pos = 0;
+
+    // number of times sent value
+    int sent = 0;
+
+    // registers
+    std::unordered_map<std::string, long> reg;
+
+    // recieve buffer
+    std::list<long> recv;
+
+    // running
+    bool running = false;
+    bool lock    = false;
+
+    // answer for part 1
+    bool part_1;
+
+    // constructor
+    program(std::vector<std::vector<std::string>> instr, int p, bool part_1);
+
+    // functions
+    void run(program &prog);
+
+    void snd(const std::string &a, program &prog);
+    void set(const std::string &a, const std::string &b);
+    void add(const std::string &a, const std::string &b);
+    void mul(const std::string &a, const std::string &b);
+    void modu(const std::string &a, const std::string &b);
+    void rcv(const std::string &a);
+    void jgz(const std::string &a, const std::string &b);
+};
+
+program::program(std::vector<std::vector<std::string>> instr, int p, bool part_1 = false){
+        this->part_1 = part_1;
         this->instr = instr;
         reg["p"] = p;
 }
@@ -82,6 +126,9 @@ void program::rcv(const std::string &a){
 
     // no longer locked waiting for value
     lock = false;
+
+    // get answer for part 1
+    if (part_1){ running = false; }
 
     // put value in register and remove from recv stack
     reg[a] = recv.front();
