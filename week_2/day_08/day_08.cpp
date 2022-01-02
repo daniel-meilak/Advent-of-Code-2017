@@ -25,7 +25,7 @@ int main(){
     for (auto line : input){
 
         // conditions
-        bool condition;
+        bool condition{true};
 
         if      (line[4] == "<" ){ condition = (reg[line[3]] <  std::stoi(line[5])); }
         else if (line[4] == ">" ){ condition = (reg[line[3]] >  std::stoi(line[5])); }

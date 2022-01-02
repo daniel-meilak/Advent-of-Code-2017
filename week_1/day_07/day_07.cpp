@@ -102,7 +102,7 @@ int part2(std::map<std::string, node> &towers, std::string start){
     std::vector<node> branch;
 
     // hold the correct weight
-    int answer;
+    int answer{0};
 
     // expand the root of the tree
     for (const std::string &s : towers[start].holding){

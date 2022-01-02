@@ -10,7 +10,7 @@ int main(){
 
     // read input into vector of vector of strings.
     std::vector<std::string> delimiters = {"p", "=", "<", ">", ",", "v", "a", " "};
-    std::vector<std::vector<long long>> input = input_to_llint_2D(read_input_2D("input_20", delimiters));
+    std::vector<std::vector<long long>> input = input_to_int_2D<long long>(read_input_2D("input_20", delimiters));
 
     // no. of particles
     const int particles = input.size();
