@@ -23,7 +23,7 @@ int main(){
 int part1(){
 
     // read input into vector of strings.
-    std::vector<int> input = input_to_int(read_input("input_10", ","));
+    std::vector<int> input = input_to_int(read_input("input_10", {","}));
 
     // create vector 0-255
     std::vector<int> hash(256);

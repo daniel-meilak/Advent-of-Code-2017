@@ -12,7 +12,7 @@ int part2(int x, int y, int dir,  std::vector<std::string> grid);
 int main(){
 
     // read input into vector of strings.
-    std::vector<std::string> input = read_input("input_22", "");
+    std::vector<std::string> input = read_input("input_22");
 
     // large grid
     const int grid_size = 1000;

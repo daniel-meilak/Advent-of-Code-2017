@@ -9,7 +9,7 @@
 int main(){
 
     // read input into vector of strings.
-    std::vector<std::string> input = read_input("input_11", ",");
+    std::vector<std::string> input = read_input("input_11", {","});
 
     // hex at origin
     Hex current(0,0,0);

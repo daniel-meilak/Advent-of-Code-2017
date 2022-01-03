@@ -11,7 +11,7 @@ int jump(std::vector<int> input, const bool part2);
 int main(){
 
     // read input into vector of ints.
-    std::vector<int> input = input_to_int(read_input("input_05", ""));
+    std::vector<int> input = input_to_int(read_input("input_05"));
 
     std::cout << "Answer (part 1): " << jump(input,false) << std::endl;
     std::cout << "Answer (part 2): " << jump(input,true)  << std::endl;
