@@ -13,9 +13,31 @@ endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# specify build type
-set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+# enable interprocedural optimization if availible
+if(ENABLE_IPO)
+   include(CheckIPOSupported)
+   check_ipo_supported( RESULT result OUTPUT output)
+   if(result)
+      set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
+   else()
+      message(SEND_ERROR "IPO is not supported: ${output}")
+   endif()
+endif()
+
+# enable color in diagnortics
+if(CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
+   add_compile_options(-fcolor-diagnostics)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+   add_compile_options(-fdiagnostics-color=always)
+else()
+   message(STATUS "No colored compiler diagnostic set for '${CMAKE_CXX_COMPILER_ID}' compiler.")
+endif()
+
+# Set a default build type if none was specified
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  message(STATUS "Setting build type to 'RelWithDebInfo' as none was specified.")
+  set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "Choose the type of build." FORCE)
+endif()
 
 # Test Results for each day
 list(APPEND part_1 1175 50376 552 455 387096 6681 gynfwly 4902 9662 1980 715 283 1588 8140 577 bkgcdefiholnpmja 1244 2951 NDWHOYRUEA 376 144 5462 8281 1695 3745)  
