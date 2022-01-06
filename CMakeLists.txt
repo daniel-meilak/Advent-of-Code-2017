@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(AOC21 VERSION 1.0)
+project(AOC17 VERSION 1.0)
 
 # compiler arguments
 if (MSVC)
@@ -82,6 +82,6 @@ foreach(day RANGE 1 25)
 
    # test results
    add_test(NAME day_${day}_test COMMAND day_${day}.exe)
-   set_tests_properties(day_${day}_test PROPERTIES PASS_REGULAR_EXPRESSION "${output_1}\n.*${output_2}" TIMEOUT 30)
+   set_tests_properties(day_${day}_test PROPERTIES PASS_REGULAR_EXPRESSION "${output_1}\n.*${output_2}" TIMEOUT 60)
    
 endforeach()
