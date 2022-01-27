@@ -6,7 +6,7 @@
 #include<cstdlib>
 #include<sstream>
 #include<iomanip>
-#include"../../Utils/utils.h"
+#include"utils.h"
 
 // forward function declarations
 int part1();

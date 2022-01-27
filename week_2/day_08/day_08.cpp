@@ -4,7 +4,7 @@
 #include<algorithm>
 #include<unordered_map>
 #include<cstdlib>
-#include"../../Utils/utils.h"
+#include"utils.h"
 
 // forward function declarations
 int current_max(const std::unordered_map<std::string, int> &reg);

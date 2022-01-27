@@ -4,8 +4,8 @@
 #include<algorithm>
 #include<cstdlib>
 #include<unordered_map>
-#include"../../Utils/utils.h"
-#include"../../Utils/math_func.h"
+#include"utils.h"
+#include"math_func.h"
 
 // forward function declarations
 void set(const std::string &a, const std::string &b, std::unordered_map<std::string, long> &reg);

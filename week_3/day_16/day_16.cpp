@@ -4,7 +4,7 @@
 #include<algorithm>
 #include<cstdlib>
 #include<unordered_map>
-#include"../../Utils/utils.h"
+#include"utils.h"
 
 // forward function declaration
 std::string dance(std::string prog, const std::vector<std::string> &input);

@@ -8,7 +8,7 @@
 #include<unordered_map>
 #include<bitset>
 #include<numeric>
-#include"../../Utils/utils.h"
+#include"utils.h"
 
 // forward function declaration
 std::string knot_hash(std::string input);

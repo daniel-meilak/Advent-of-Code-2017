@@ -4,7 +4,7 @@
 #include<string>
 #include<algorithm>
 #include<cstdlib>
-#include"../../Utils/utils.h"
+#include"utils.h"
 
 int part1(const int &step);
 int part2(const int &step);

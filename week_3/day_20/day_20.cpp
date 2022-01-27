@@ -4,7 +4,7 @@
 #include<algorithm>
 #include<cstdlib>
 #include<ranges> // C++20
-#include"../../Utils/utils.h"
+#include"utils.h"
 
 int main(){
 

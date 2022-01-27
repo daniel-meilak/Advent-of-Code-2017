@@ -4,7 +4,7 @@
 #include<algorithm>
 #include<cstdlib>
 #include<unordered_map>
-#include"../../../Utils/utils.h"
+#include"../utils.h"
 
 // forward function declarations
 void snd(const std::string &a, std::vector<int> &freq, std::unordered_map<std::string, long> &reg);

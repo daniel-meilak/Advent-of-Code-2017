@@ -4,7 +4,7 @@
 #include<algorithm>
 #include<unordered_map>
 #include<cstdlib>
-#include"../../Utils/utils.h"
+#include"utils.h"
 
 // forward function declarations
 std::vector<std::vector<std::vector<std::string>>> split_pic(const std::vector<std::string> &picture, const int &n);

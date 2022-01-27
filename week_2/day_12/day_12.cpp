@@ -5,7 +5,7 @@
 #include<algorithm>
 #include<unordered_map>
 #include<cstdlib>
-#include"../../Utils/utils.h"
+#include"utils.h"
 
 // forward function declaration
 std::unordered_map<int,int> find_group_map(std::unordered_map<int, std::vector<int>> &pipes, const int &n);
