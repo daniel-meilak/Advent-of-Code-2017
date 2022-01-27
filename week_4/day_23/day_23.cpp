@@ -8,10 +8,10 @@
 #include"math_func.h"
 
 // forward function declarations
-void set(const std::string &a, const std::string &b, std::unordered_map<std::string, long> &reg);
-void sub(const std::string &a, const std::string &b, std::unordered_map<std::string, long> &reg);
-void mul(const std::string &a, const std::string &b, std::unordered_map<std::string, long> &reg);
-void jnz(const std::string &a, const std::string &b, int &i, std::unordered_map<std::string, long> &reg);
+void set(const std::string &a, const std::string &b, std::unordered_map<std::string, long long> &reg);
+void sub(const std::string &a, const std::string &b, std::unordered_map<std::string, long long> &reg);
+void mul(const std::string &a, const std::string &b, std::unordered_map<std::string, long long> &reg);
+void jnz(const std::string &a, const std::string &b, int &i, std::unordered_map<std::string, long long> &reg);
 
 int main(){
 
@@ -20,7 +20,7 @@ int main(){
     std::vector<std::vector<std::string>> input = read_input_2D("input_23", delimiters);
 
     // registers 
-    std::unordered_map<std::string, long> reg;
+    std::unordered_map<std::string, long long> reg;
 
     // vector of freq and rcv
     std::vector<int> freq, recv;
@@ -62,7 +62,7 @@ int main(){
     return 0;
 }
 
-void set(const std::string &a, const std::string &b, std::unordered_map<std::string, long> &reg){
+void set(const std::string &a, const std::string &b, std::unordered_map<std::string, long long> &reg){
 
     // check if b is a register or value
     if (b[0]>='a' && b[0]<='z'){
@@ -73,7 +73,7 @@ void set(const std::string &a, const std::string &b, std::unordered_map<std::str
     }
 }
 
-void sub(const std::string &a, const std::string &b, std::unordered_map<std::string, long> &reg){
+void sub(const std::string &a, const std::string &b, std::unordered_map<std::string, long long> &reg){
 
     // check if b is a register or value
     if (b[0]>='a' && b[0]<='z'){
@@ -84,7 +84,7 @@ void sub(const std::string &a, const std::string &b, std::unordered_map<std::str
     }
 }
 
-void mul(const std::string &a, const std::string &b, std::unordered_map<std::string, long> &reg){
+void mul(const std::string &a, const std::string &b, std::unordered_map<std::string, long long> &reg){
 
     // check if b is a register or value
     if (b[0]>='a' && b[0]<='z'){
@@ -95,7 +95,7 @@ void mul(const std::string &a, const std::string &b, std::unordered_map<std::str
     }
 }
 
-void jnz(const std::string &a, const std::string &b, int &i, std::unordered_map<std::string, long> &reg){
+void jnz(const std::string &a, const std::string &b, int &i, std::unordered_map<std::string, long long> &reg){
 
     // check if a is a register or value
     if (a[0]>='a' && a[0]<='z'){

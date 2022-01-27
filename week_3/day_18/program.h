@@ -19,10 +19,10 @@ struct program{
     int sent = 0;
 
     // registers
-    std::unordered_map<std::string, long> reg;
+    std::unordered_map<std::string, long long> reg;
 
     // recieve buffer
-    std::list<long> recv;
+    std::list<long long> recv;
 
     // running
     bool running = false;
