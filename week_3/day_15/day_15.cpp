@@ -14,7 +14,7 @@ int main(){
 
     // read input
     std::vector<std::string> delimiters = {"Generator", " ", "starts with", "A", "B"};
-    std::vector<std::vector<uint>> input = input_to_int_2D<uint>(read_input_2D("input_15",delimiters));
+    std::vector<std::vector<unsigned int>> input = input_to_int_2D<unsigned int>(read_input_2D("input_15",delimiters));
 
     unsigned int start_a = input[0][0];
     unsigned int start_b = input[1][0];
@@ -56,10 +56,10 @@ int judge(unsigned int a, unsigned int b, const bool part2){
 
 // next value for generator a
 unsigned int gen_a(const unsigned int &prev){
-    return (prev * 16807UL) % 2147483647UL;
+    return (prev * 16807ULL) % 2147483647ULL;
 }
 
 // next value for generator b
 unsigned int gen_b(const unsigned int &prev){
-    return (prev * 48271UL) % 2147483647UL;
+    return (prev * 48271ULL) % 2147483647ULL;
 }

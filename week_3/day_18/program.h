@@ -112,7 +112,7 @@ void program::modu(const std::string &a, const std::string &b){
 
     // check if b is a register or value
     if (b[0]>='a' && b[0]<='z'){ reg[a] = mod(reg[a],reg[b]); }
-    else { reg[a] = mod(reg[a],std::stol(b)); }
+    else { reg[a] = mod(reg[a],std::stoll(b)); }
     pos++;
 }
 
