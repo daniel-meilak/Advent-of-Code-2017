@@ -10,3 +10,4 @@ build/*
 .vs/*
 out/*
 CMakeSettings.json
+input*
